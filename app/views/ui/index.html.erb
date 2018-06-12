@@ -1,0 +1,123 @@
+<div class="main">
+  <form action="/ui/search" method="get" class="search-form">
+    <h2>Search for a citizen</h2>
+    <input type="text" name="search_query">
+    <h3>Search By</h3>
+    <input type="radio" name="search_criteria" value="citizens_name" id="citizens_name" checked>
+    <label for="citizens_name">Citizens Name </label>
+    <input type="radio" name="search_criteria" value="id_number" id="id_number">
+    <label for="id_number">ID card number</label>
+    <input type="radio" name="search_criteria" value="phone_number" id="phone_number">
+    <label for="phone_number">Phone Number</label>
+    <div>
+      <button type="submit">Search</button>
+    </div>
+  </form>
+
+  <div class="people recent-searches">
+    <h2>Recent searches</h2>
+    <ul>
+      <% 10.times do %>
+      <li>
+        <a href="#">         
+          <figure>
+            <img src="/sample.jpeg">
+            <figcaption>
+              <h2>Lukong Isaac Nsoseka</h2>
+            </figcaption>
+          </figure>
+          <section class="citizen-info">
+            <dl>  
+              <div>           
+                <dt>
+                  <label>Nom/Surname: </label>
+                </dt>
+                <dd>
+                  <h3>Lukong</h3>
+                </dd>
+              </div>       
+              <div>
+                <dt>
+                  <label>Prenoms/Given Names: </label>
+                </dt>
+                <dd>
+                  <h3>Isaac Nsoseka</h3>
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Ne le/Born On: </label>
+                </dt>
+                <dd>
+                  31/08/1993
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Pere/Father: </label>
+                </dt>
+                <dd>
+                  Lukong Isaac
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Mere/Mother: </label>
+                </dt>
+                <dd>
+                  Wirnkar Lukong Alice
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Profession/Occupation: </label>
+                </dt>
+                <dd>
+                  Student
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Adresse/Address: </label>
+                </dt>
+                <dd>
+                  Bambui
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Taille/Height: </label>
+                </dt>
+                <dd>
+                  1.85M
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Sexe/Sex: </label>
+                </dt>
+                <dd>
+                  M
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>S.P/S.M: </label>
+                </dt>
+                <dd>
+                  1583
+                </dd>
+              </div>
+            </dl>
+          </section>
+          <div class='id-info'>
+            <h1>No: 1117098967</h1>
+            <p>Date de deliverance/Date of issue: <span class="date-of-issue">10/09/2015</span></p>
+            <p>Date d'expiration/Date of expiration: <span class="expiry-date">10/09/2025</span></p>
+          </div>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

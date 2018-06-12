@@ -1,0 +1,15 @@
+<div class="main agent">
+  <h2>Flags Added by You</h2>
+  <div class="flags">
+    <h3>Flags</h3>
+    <ul>
+      <%  @flags.each do |flag| %>
+        <%= render 'shared/flag', { flag: flag } %>
+      <% end %>
+      <% if @flags.empty? %>
+        <h2 class="no-items">NO FLAGS</h2>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

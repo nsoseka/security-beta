@@ -1,0 +1,32 @@
+<%= my_form_for conviction, url: citizen_convictions_path(citizen, conviction), method: 'post', html: {id: 'new_conviction', autocomplete: 'off' }  do |f| %>
+  <h4>Conviction Adder</h4>
+  <dl>
+    <dt>
+      <%= f.label :charge, 'Charge' %>
+    </dt>
+    <dd>
+      <%= f.text_area :charge, rows: 6 %>
+    </dd>
+    <dt>
+      <%= f.label :sentence, 'Sentence' %>
+    </dt>
+    <dd>
+      <%= f.text_area :sentence, rows: 6 %>
+    </dd>
+    <dt>
+      <%= f.label :sentenced_on, 'Sentenced on' %>
+    </dt>
+    <dd>
+       <%= f.text_field :sentenced_on, class: 'datepicker' %>
+    </dd>
+    <dt>
+      <%= f.label :judge, "Sentenced by Judge(Id Card Number)" %>
+    </dt>
+    <dd>
+      <%= f.text_field :judge %>
+    </dd>
+  </dl>
+  <button type="submit" class="issue-adder">Add Conviction</button>
+<% end %>
+
+

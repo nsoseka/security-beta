@@ -1,0 +1,43 @@
+<header>
+  <h1><a href="/">237Security</a></h1>
+  <% if signed_in? %>
+    <nav>
+      <% if current_agent.role == 'admin' %>
+        <li class="<%= active_tab == 'dashboard' ? 'active-tab' : 'nil' %>">
+          <%= link_to 'Dashboard', admins_path %>
+        </li>
+      <% end %>
+      <li class="<%= active_tab == 'convocations' ? 'active-tab' : 'nil' %>">
+        <%= link_to 'Convocations', convocations_path %>
+      </li>
+      <% if current_agent.role == 'judge' %>
+        <li class="<%= active_tab == 'convictions' ? 'active-tab' : 'nil' %>">
+          <%= link_to 'Convictions', convictions_path %>
+        </li>
+      <% end %>
+      <li class="<%= active_tab == 'flags' ? 'active-tab' : 'nil' %>">
+        <%= link_to 'Flags', flags_path %>
+      </li>
+      <li class="<%= active_tab == 'restrictions' ? 'active-tab' : 'nil' %>">
+        <%= link_to 'Restrictions', restrictions_path %>
+      </li>
+      <li class="<%= active_tab == 'agents' ? 'active-tab' : 'nil' %>">
+        <%= link_to 'Agents', agents_path %>
+      </li>
+      <li class="red <%= active_tab == 'user' ? 'active-tab' : 'nil' %>">
+        <%= link_to current_agent.username, agent_path(current_agent) %>
+      </li>
+    </nav>
+  <% else %>
+    <nav>
+      <li class="create-account">
+        <%= link_to 'Login', sign_in_path %>
+      </li>
+      <li class="create-account">
+        <%= link_to 'Create Account', register_path %>
+      </li>
+    </nav>
+  <% end %>
+  <div id="informant" class="red">
+  </div>
+</header>

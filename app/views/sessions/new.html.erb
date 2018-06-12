@@ -1,0 +1,38 @@
+<div class="home">
+  <div class="aside">
+    <%= form_tag sessions_path, html: { autocomplete: 'off' } do %>
+      <h2>Login Form</h2>
+      <div>
+        <%= label_tag :username, 'Username', autocomplete: :off %>
+        <%= text_field_tag :username %>
+        <%= label_tag :password, 'Password' %>
+        <%= password_field_tag :password %>
+      </div>
+      <div>
+        <button type="submit">Login</button>
+      </div>
+      <p>
+        Only authorized personnel have access to the services offered by this platform.
+        Businesses and corporations that want to use some of the services offered by this
+        platform like performing background security checks, non-conviction creations have to file their
+        orders at the security posts in their various jurisdictions. They will be processed and determined if they qualify. If any changes however are made, that make the process of obtaining
+        API endpoints easier all establishments will be duely informed. Thanks
+      </p>    
+    <% end %>
+  </div>
+  <div class="site-info">
+    <h1>237Security is the online Portal for the Cameroonian Security Service</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+    </p>
+    <button>
+      <a href="#">Read more...</a>
+    </button>
+  </div>
+</div>
+
+
+

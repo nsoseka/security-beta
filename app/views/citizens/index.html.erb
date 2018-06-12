@@ -1,0 +1,65 @@
+<div class="main">
+  <form action="/search" method="get" class="search-form" autocomplete="off">
+    <h2>Search for a citizen</h2>
+    <input type="text" name="search_query" required>
+    <h3>Search By</h3>
+    <input type="radio" name="search_criteria" value="citizens_name" id="citizens_name" checked>
+    <label for="citizens_name">Citizens Name </label>
+    <input type="radio" name="search_criteria" value="id_number" id="id_number">
+    <label for="id_number">ID card number</label>
+    <input type="radio" name="search_criteria" value="phone_number" id="phone_number">
+    <label for="phone_number">Phone Number</label>
+    <div>
+      <button type="submit">Search</button>
+    </div>
+  </form>
+
+  <div class="new-board">
+    <h2>Register New Citizens | Stations | or An Agent</h2>
+  
+    <div>
+      <button class="new-factor">
+        <%= link_to "Register a Citizen", new_citizen_path %>
+      </button>
+    </div>
+    <div>
+      <button class="new-factor">
+        <%= link_to "Register an Agent", new_agent_path %>
+      </button>
+    </div>
+    
+    <div>
+      <button class="new-factor">
+        <%= link_to "Register a Station", new_station_path %>
+      </button>
+    </div>
+    
+  </div>
+
+  <div class="people recent-searches">
+    <h2>Recent searches</h2>
+    <ul>
+      <% @citizens.each do |citizen| %>
+        <%= render 'shared/citizen', { citizen: citizen } %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<!-- 
+<% if flash.now[:notice] %>
+  <script type="text/javascript">
+    var informant = $('#informant');
+    if (informant.hasClass('cache-version')) {
+      informant.removeClass('cache-version');
+    } else {
+      informant.text('Welcome');
+      informant.removeClass().addClass('green').show(400).delay(4000).hide(400);
+    }  
+  </script>
+<% end %>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:before-cache', function(e) {
+    $('#informant').addClass('cache-version');
+  });
+</script> -->

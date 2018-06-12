@@ -1,0 +1,23 @@
+<li data-flagid="<%= flag.id %>">
+  <div class="flag">
+    <span class="data">Flag: </span>
+    <span>
+      <%= flag.reason %>
+    </span>
+  </div>
+  <div class="severity">
+    <span>Severity Level: </span>
+    <span class="flag-level"><%= flag.severity.to_s + ' / 5' %></span>
+  </div>
+  <div class="date-flagged">
+    <span>Date Flagged: </span>
+    <span><%= flag.created_at.strftime("%d-%m-%y") %></span>
+  </div>
+  <div class="clear-flag">
+    <%= link_to 'Clear Flag', citizen_flag_path(flag.citizen, flag), remote: true, class: 'flag-updater' %>
+  </div>
+  <div class="added-by">
+    <span>Added by: </span>
+    <span class="adder"><%= flag.agent.username %></span>
+  </div>
+</li>

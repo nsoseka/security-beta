@@ -1,0 +1,13 @@
+<div class="main citizens">
+  <div class="people recent-searches">
+    <h2>Search results for "<span><%= @query %>"</span></h2>
+    <ul>
+      <% @citizens.each do |citizen| %>
+        <%= render 'shared/citizen', { citizen: citizen } %>
+      <% end %>
+      <% if @citizens.empty? %>
+        <h2 class="no-match">No citizens match your search</h2>
+      <% end %>
+    </ul>
+  </div>
+</div>

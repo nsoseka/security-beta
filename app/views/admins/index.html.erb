@@ -1,0 +1,42 @@
+<div class="main dasboard">
+  <h2>Admins Dashboard</h2>
+  <div class="new-agent-request">
+    <table>
+      <thead>
+        <th>No</th>
+        <th>Names</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Station</th>
+        <th>Username</th>
+        <th>ID Card Number</th>
+        <th>Service Id</th>
+        <th>Verified Email?</th>
+        <th>Verify Agent's Account</th>
+      </thead>
+      <% @requests.each_with_index do |request, n| %>
+        <tr data-agentid='<%= request.id %>'>
+          <td><%= n + 1 %></td>
+          <td><%= request.full_name %></td>
+          <td><%= request.phone_number %></td>
+          <td><%= request.email %></td>
+          <td><%= request.role %></td>
+          <td><%= request.station.name %></td>
+          <td><%= request.username %></td>
+          <td><%= request.id_card_number %></td>
+          <td><%= request.service_id %></td>
+          <% if request.email_verification_status %>
+            <td>YES</td>
+          <% else %>
+            <td>NO</td>
+          <% end %>
+
+          <td class="verification-status">
+            <%= link_to 'Verify Agent', admin_agent_path(current_agent, request), remote: true, method: 'patch', param: { action: 'verify' } %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+

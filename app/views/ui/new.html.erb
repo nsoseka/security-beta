@@ -1,0 +1,72 @@
+<div class="main register-citizen">
+  <h2>Register ID Card</h2>
+  <form id="new-citizen" runat="server">
+    <label>Choose you passport</label>
+    <input type='file' id="passport" name="passport" />
+    <div class="image-container">
+      <img id="passport-img" src="#"/>
+    </div>
+    <label>Surname/Nom</label>
+    <input type="text" name="surname">
+    <label>Given Names/Prenoms</label>
+    <input type="text" name="given_names">
+    <label>Born On/Ne Le</label>
+    <input type="text" name="date_of_birth" class="datepicker">
+    <label>Born At/ Ne A</label>
+    <input type="text" name="born_at">
+    <label>Father/Pere</label>
+    <input type="text" name="father">
+    <label>Mother/Mere</label>
+    <input type="text" name="mother">
+    <label>Occupation/Profession</label>
+    <input type="text" name="occupation">
+    <label>Address/Adresse</label>
+    <input type="text" name="address">
+    <label>Height/Taille</label>
+    <input type="text" name="height">
+    <label>Sex</label>
+    <select name="sex" class="sex">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+    </select>
+    <label>S.P/S.M</label>
+    <input type="number" name="sp">
+    <label>Date of Issue/Date de deliverance</label>
+    <input type="text" name="date_issued" class="datepicker">
+    <label>Date of Expiration/Date d'expiration</label>
+    <input type="text" name="expiry_date" class="datepicker">
+    <label>ID Card Number</label>
+    <input type="number" name="id_card_number">
+    <div class="submit">
+      <button type="submit">Register Card</button>
+    </div>
+  </form>
+  <script>
+    function readURL(input) {
+
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#passport-img').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#passport").change(function() {
+      readURL(this);
+    });
+
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+</div>
+
+

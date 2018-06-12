@@ -1,0 +1,36 @@
+<div class="main dasboard">
+  <h2>Admins Dashboard</h2>
+  <div class="new-agent-request">
+    <table>
+      <thead>
+        <th>No</th>
+        <th>Names</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Station</th>
+        <th>Username</th>
+        <th>ID Card Number</th>
+        <th>Service Id</th>
+        <th>Verified Email?</th>
+        <th>Verify Agent's Account</th>
+      </thead>
+      <%= 30.times do |n| %>
+        <tr data-agentid='<%= n %>'>
+          <td><%= n %></td>
+          <td>Lukong Isaac Nsoseka Goldfoyle</td>
+          <td>677829329</td>
+          <td>lisaacjunior@yahoo.com</td>
+          <td>Commissioner</td>
+          <td>Kumbo Police Station Ta Mbveh</td>
+          <td>Abu Bakr</td>
+          <td>117708898</td>
+          <td>12CFRGTY</td>
+          <td>No</td>
+          <td class="verification-status"><a href="#">Verify agent</a></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+

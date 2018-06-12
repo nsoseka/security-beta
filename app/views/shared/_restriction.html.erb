@@ -1,0 +1,12 @@
+<div data-restrictionid="<%= restriction.id %>">
+  <span class="data"><%= restriction.genre.capitalize + ':' %> </span>
+  <span><%= restriction.description %></span>
+  <span class="clear">
+    <%= link_to 'Remove Restriction', citizen_restriction_path(restriction.citizen, restriction), remote: true, class: 'restriction-updater' %>
+  </span>
+  <div class="added-by">
+    Added by:
+    <span class="adder"><%= restriction.agent.username %></span>
+  </div>
+</div>
+

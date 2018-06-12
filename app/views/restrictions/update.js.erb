@@ -1,0 +1,14 @@
+var item = $('[data-restrictionid="<%= @restriction.id %>"]');
+var informant = $('#informant');
+
+item.slideUp(400, function() {
+  if ($('.restrictions div:visible').length === 0) {
+    $('.restrictions ul li').append('<h2 class="no-items">NO RESTRICTIONS</h2>');
+  }
+
+  informant.text('You have successfully removed the RESTRICTION');
+  informant.removeClass().addClass('green').show(400).delay(4000).hide(400);
+});
+  
+
+

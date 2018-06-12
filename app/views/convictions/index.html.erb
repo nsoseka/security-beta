@@ -1,0 +1,15 @@
+<div class="main agent">
+  <h2>Convictions added in Court</h2>
+  <div class="convictions">
+    <h3>Convictions</h3>
+    <ul>
+      <% @convictions.each do |conviction| %>
+        <%= render 'shared/conviction', { conviction: conviction } %>
+      <% end %>
+      <% if @convictions.empty? %>
+        <h2 class="no-items">HAS NEVER BEEN CONVICTED</h2>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

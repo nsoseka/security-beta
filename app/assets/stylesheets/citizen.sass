@@ -1,0 +1,143 @@
+@import 'colors'
+
+.citizen, .agent
+  .no-items
+    font-size: 1.5em
+    color: $brown
+    text-align: center
+  h3
+    font-size: 1.5em
+    color: $green
+  form 
+    margin: 80px 0 0 0
+    text-align: center
+    display: none
+    h4 
+      font-size: 1.3em
+      color: $red
+    dt
+      padding: 10px 0
+      font-weight: bold 
+      font-size: 1.2em
+    textarea
+      width: 80%
+      border: 1px solid $faint-black
+      border-radius: 4px
+      padding: 10px 15px
+      font: inherit
+      font-size: 1.2em
+      resize: vertical
+    input, select 
+      font-size: 1.1em 
+      padding: 5px 8px
+      border: 1px solid $faint-black
+    .issue-adder
+      float: none
+      margin: 20px 0
+  .added-by
+    padding: 10px
+    .adder 
+      text-decoration: underline
+
+
+.convocations, .convictions, .flags, .restrictions
+  border: 2px solid $blue
+  border-radius: 4px
+  margin: 20px 0
+  padding: 10px
+  overflow: hidden
+  li
+    border: 1px solid #f0f0f0
+    padding: 10px
+    margin: 20px 0
+    .reason 
+      padding: 10px 0
+      span 
+        color: $blue 
+        font-weight: bold
+    .status, .convokee, .honor-status, .date 
+      display: inline-block
+      width: 24%
+      padding: 5px 8px
+      box-sizing: border-box
+      border-radius: 4px
+      vertical-align: top
+      color: $pure-white
+    .status 
+      background: $black
+    .honor-status
+      background: $dark
+    .convokee 
+      background: $light-black
+      a 
+        text-decoration: underline
+    .date 
+      background: $faint-black
+    .change-status
+      display: block
+      a
+        text-decoration: underline
+        border-radius: 4px
+        display: block
+.convictions
+  .charge, .sentence
+    padding: 5px 0
+    span 
+      color: $blue 
+      font-weight: bold
+  .sentenced-by, .date-of-sentencing, .added-by
+    display: inline-block
+    width: 32%
+    backgrond: $faint-black
+    color: $blue
+    font-weight: bold
+    box-sizing: border-box
+  .date-of-sentencing
+    font-size: 1.3em
+.flags
+  .flag 
+    padding: 10px 0
+    .data 
+      color: $red
+      font-weight: bold
+  .date-flagged, .severity, .clear-flag
+    width: 32%
+    background: $faint-black
+    display: inline-block
+    color: $pure-white
+    padding: 5px 8px
+    box-sizing: border-box
+    border-radius: 4px
+  .clear-flag
+    background: $brown
+    a 
+      display: block
+.restrictions
+  div.waiting
+    display: inline-block
+    vertical-align: top
+    margin: 20px 0
+    width: 32%
+    padding: 10px
+    box-sizing: border-box
+  div 
+    padding: 10px 0
+    .data 
+      color: $blue
+      font-weight: bold
+  .clear 
+    display: block
+    padding: 6px 0
+    a 
+      text-decoration: underline
+      color: $blue
+      font-weight: bold
+
+.issue-adder 
+  background: $blue 
+  padding: 8px 20px
+  color: $pure-white
+  border: 1px solid $blue
+  border-radius: 4px
+  float: right
+  cursor: pointer

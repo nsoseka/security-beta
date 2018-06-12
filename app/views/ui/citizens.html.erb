@@ -1,0 +1,415 @@
+<div class="main citizen">
+  <div class="people recent-searches">
+    <h2>ID card Information</h2>
+    <ul>
+      <li>
+        <a href="#">         
+          <figure>
+            <img src="/sample.jpeg">
+            <figcaption>
+              <h2>Lukong Isaac Nsoseka</h2>
+            </figcaption>
+          </figure>
+          <section class="citizen-info">
+            <dl>  
+              <div>           
+                <dt>
+                  <label>Nom/Surname: </label>
+                </dt>
+                <dd>
+                  Lukong
+                </dd>
+              </div>       
+              <div>
+                <dt>
+                  <label>Prenoms/Given Names: </label>
+                </dt>
+                <dd>
+                  Isaac Nsoseka
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Ne le/Born On: </label>
+                </dt>
+                <dd>
+                  31/08/1993
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Pere/Father: </label>
+                </dt>
+                <dd>
+                  Lukong Isaac
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Mere/Mother: </label>
+                </dt>
+                <dd>
+                  Wirnkar Lukong Alice
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Profession/Occupation: </label>
+                </dt>
+                <dd>
+                  Student
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Adresse/Address: </label>
+                </dt>
+                <dd>
+                  Bambui
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Taille/Height: </label>
+                </dt>
+                <dd>
+                  1.85M
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>Sexe/Sex: </label>
+                </dt>
+                <dd>
+                  M
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <label>S.P/S.M: </label>
+                </dt>
+                <dd>
+                  1583
+                </dd>
+              </div>
+            </dl>
+          </section>
+          <div class='id-info'>
+            <h1>No: 1117098967</h1>
+            <p>Date de deliverance/Date of issue: <span class="date-of-issue">10/09/2015</span></p>
+            <p>Date d'expiration/Date of expiration: <span class="expiry-date">10/09/2025</span></p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="convocations">
+    <h3>Convocations</h3>
+    <ul>
+      <li>
+        <div class="reason">
+          Convocated on the 28th of may regarding an issue with the housefire that began in His neighbours house. To be questioned about the knowledge they have of the scene and what is going on in their own neighbourhood
+        </div>
+        <div class="status">
+          <span>Status: </span>
+          <span class="data">Open</span>
+          <span class="change-status"><a href="#">Close Convocation</a></span>
+        </div>
+        <div class="date">
+          <span>Date expected to show up: </span>
+          <span class="data">12/09/2019</span>
+        </div>
+        <div class="honor-status">
+          <span>Honored invitation yet? </span>
+          <span class="data">No</span>
+          <span class="change-status"><a href="#">Mark YES</a></span>
+        </div>
+        <div class="convokee">
+          <span>Convoked by: </span>
+          <span class="data"><a href="#">Lukong Jefferson Bushman</a></span>
+        </div>
+      </li>
+      <li>
+        <div class="reason">
+          Convocated on the 28th of may regarding an issue with the housefire that began in His neighbours house. To be questioned about the knowledge they have of the scene and what is going on in their own neighbourhood
+        </div>
+        <div class="status">
+          <span>Status: </span>
+          <span class="data">Closed</span>
+          <span class="change-status"><a href="#">Reopen Convocation</a></span>
+        </div>
+        <div class="date">
+          <span>Date expected to show up: </span>
+          <span class="data">12/09/2019</span>
+        </div>
+        <div class="honor-status">
+          <span>Honored invitation yet? </span>
+          <span class="data">Yes</span>
+          <span class="change-status"><a href="#">Mark NO</a></span>
+        </div>
+        <div class="convokee">
+          <span>Convoked by: </span>
+          <span class="data"><a href="#">Lukong Jefferson Bushman</a></span>
+        </div>
+      </li>
+    </ul>
+    <button class="issue-adder">Add a convocation</button>
+    <form action="/convocation/new" method="post">
+      <dl>
+        <dt>
+          <label>Reason for Convocation</label>
+        </dt>
+        <dd>
+          <textarea rows="6" name="reason_for_convocation"></textarea>
+        </dd>
+        <dt>
+          <label>Date expected</label>
+        </dt>
+        <dd>
+          <input type="date" name="date_expected">
+        </dd>
+        <dt>
+          <label>Convoked by(id card number)</label>
+        </dt>
+        <dd>
+          <input type="text" name="convoker">
+        </dd>
+        <dt>
+          <label>Convoked to come to</label>
+        </dt>
+        <dd>
+          <input type="text" name="convoked_to">
+        </dd>
+      </dl>
+      <button type="submit" class="issue-adder">Add Convocation</button>
+    </form>
+  </div>
+  <div class="convictions">
+    <h3>Convictions</h3>
+    <ul>
+      <li>
+        <div class="sentence">
+          <span>Sentence: </span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class='charge'>
+          <span>Charge: </span>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class="sentenced-by">
+          <span>Sentenced by Jugde: </span>
+          <span class="sentencer">Francis Kintomino Jude</span>
+        </div>
+        <div class="date-of-sentencing">
+          <span>Sentenced on the: </span>
+          <span>12/09/2017</span>
+        </div>
+      </li>
+      <li>
+        <div class="sentence">
+          <span>Sentence: </span>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class='charge'>
+          <span>Charge: </span>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div class="sentenced-by">
+          <span>Sentenced by Jugde: </span>
+          <span class="sentencer">Francis Kintomino Jude</span>
+        </div>
+        <div class="date-of-sentencing">
+          <span>Sentenced on the: </span>
+          <span>12/09/2017</span>
+        </div>
+      </li>
+    </ul>
+    <button class="issue-adder">Add a conviction</button>
+    <form action="/convictions/new" method="post">
+      <h4>Conviction Adder</h4>
+      <dl>
+        <dt>
+          <label>Charge</label>
+        </dt>
+        <dd>
+          <textarea rows="6" name="charge"></textarea>
+        </dd>
+        <dt>
+          <label>Sentence</label>
+        </dt>
+        <dd>
+          <textarea rows="6" name="sentence"></textarea>
+        </dd>
+        <dt>
+          <label>Sentenced by Judge</label>
+        </dt>
+        <dd>
+          <input type="text" name="convicted_by">
+        </dd>
+        <dt>
+          <label>Sentenced on</label>
+        </dt>
+        <dd>
+          <input type="date" name="sentencing_date">
+        </dd>
+      </dl>
+      <button class="issue-adder" type="submit">Add Conviction</button>
+    </form>
+  </div>
+
+  <div class="flags">
+    <h3>Flags</h3>
+    <ul>
+      <li>
+        <div class="flag">
+          <span class="data">Flag: </span>
+          <span>
+            Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </span>
+        </div>
+        <div class="severity">
+          <span>Flag Level: </span>
+          <span class="flag-level">5</span>
+        </div>
+        <div class="date-flagged">
+          <span>Date Flagged: </span>
+          <span>09/12/2017</span>
+        </div>
+        <div class="clear-flag">
+          <a href="#">Clear Flag</a>
+        </div>
+      </li>
+      <li>
+        <div class="flag">
+          <span class="data">Flag: </span>
+          <span>
+            Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </span>
+        </div>
+        <div class="severity">
+          <span>Flag Level: </span>
+          <span class="flag-level">5</span>
+        </div>
+        <div class="date-flagged">
+          <span>Date Flagged: </span>
+          <span>09/12/2017</span>
+        </div>
+        <div class="clear-flag">
+          <a href="#">Clear Flag</a>
+        </div>
+      </li>
+      <li>
+        <div class="flag">
+          <span class="data">Flag: </span>
+          <span>
+            Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </span>
+        </div>
+        <div class="severity">
+          <span>Flag Level: </span>
+          <span class="flag-level">5</span>
+        </div>
+        <div class="date-flagged">
+          <span>Date Flagged: </span>
+          <span>09/12/2017</span>
+        </div>
+        <div class="clear-flag">
+          <a href="#">Clear Flag</a>
+        </div>
+      </li>
+    </ul>
+    <button class="issue-adder">Add a flag</button>
+    <form action="/flag/new" method="post">
+      <h4>Flag Adder</h4>
+      <dl>
+        <dt>
+          <label>Reason for flagging</label>
+        </dt>
+        <dd>
+          <textarea rows="6" name='reason_for_flag'></textarea>
+        </dd>
+        <dt>
+          <label>Level of severity</label>
+        </dt>
+        <dd>
+          <select>
+            <option value="1" selected>Level 1</option>
+            <option value="2"d>Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5</option>
+          </select>
+        </dd>
+        <dt>
+          <label>Date flagged</label>
+        </dt>
+        <dd>
+          <input type="date" name="date_flagged">
+        </dd>
+      </dl>
+      <button type="submit" class="issue-adder">Add Flag</button>
+    </form>
+  </div>
+  <div class="restrictions">
+    <h3>Restrictions</h3>
+    <ul>
+      <li>
+        <div class="movement">
+          <span class="data">Movement: </span>
+          <span>Not allowed to move out of the North West region</span>
+          <span class="clear"><a href="#">Remove restriction</a></span>
+        </div>
+        <div>
+          <span class="data">Financial: </span>
+          <span>No financial transactions allowed</span>
+          <span class="clear"><a href="#">Remove restriction</a></span>
+        </div>
+        <div>
+          <span class="data">Health Units: </span>
+          <span>Access to health care but the health care providers should inform local authorities about their presences</span>
+          <span class="clear"><a href="#">Remove restriction</a></span>
+        </div>
+      </li>
+    </ul>
+    <button class="issue-adder">Add a restriction</button>
+    <form action='/restrictions/new' method="post">
+      <h4>Restrictions Adder</h4>
+      <dl>
+        <dt>
+          <label>Restriction description</label>
+        </dt>
+        <dd>
+          <textarea rows="6" name='restriction_description'></textarea>
+        </dd>
+        <dt>
+          <label>Restriction Type</label>
+        </dt>
+        <dd>
+          <select name="restriction_type">
+            <option value="movement" selected>Movement Restrictions</option>
+            <option value="health">Health Service Restrictions</option>
+            <option value="financial">Financial Access Restrictions</option>
+          </select>
+        </dd>
+      </dl>
+      <button class="issue-adder" type="submit">Add Restriction</button>
+    </form>
+  </div>
+</div>

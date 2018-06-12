@@ -1,0 +1,100 @@
+<div class="main citizen">
+
+  <% 
+    @convocations = @citizen.convocations.reject{|convocation| convocation.status}
+    @convictions = @citizen.convictions 
+    @flags = @citizen.flags.reject{|flag| flag.remove }
+    @restrictions = @citizen.restrictions.reject{|restriction| restriction.remove }
+  %>
+
+  <div class="people recent-searches">
+    <h2>ID card Information</h2>
+    <%= render 'shared/citizen', { citizen: @citizen, convocation: @convocation } %>
+  </div>
+  <div class="convocations">
+    <h3>Convocations</h3>
+    <ul>
+      <% @convocations.each do |convocation| %>
+        <%= render 'shared/convocation', { convocation: convocation } %>
+      <% end %>
+      <% if @convocations.empty? %>
+        <h2 class="no-items">NO CONVOCATIONS</h2>
+      <% end %>
+    </ul>
+    <button class="issue-adder new_convocation">Add a convocation</button>
+    <%= render 'shared/new_convocation', { citizen: @citizen, convocation: @convocation } %>
+  </div>
+  <div class="convictions">
+    <h3>Convictions</h3>
+    <ul>
+      <% @convictions.each do |conviction| %>
+        <%= render 'shared/conviction', { conviction: conviction } %>
+      <% end %>
+      <% if @convictions.empty? %>
+        <h2 class="no-items">HAS NEVER BEEN CONVICTED</h2>
+      <% end %>
+    </ul>
+    <button class="issue-adder new_conviction">Add a conviction</button>
+    <%= render 'shared/new_conviction', { citizen: @citizen, conviction: @conviction }%>
+  </div>
+
+  <div class="flags">
+    <h3>Flags</h3>
+    <ul>
+      <%  @flags.each do |flag| %>
+        <%= render 'shared/flag', { flag: flag } %>
+      <% end %>
+      <% if @flags.empty? %>
+        <h2 class="no-items">NO FLAGS</h2>
+      <% end %>
+    </ul>
+    <button class="issue-adder new_flag">Add a flag</button>
+    <%= render 'shared/new_flag', { citizen: @citizen, flag: @flag } %>
+  </div>
+  <div class="restrictions">
+    <h3>Restrictions</h3>
+    <ul>
+      <% if @restrictions.empty? %>
+        <h2 class="no-items">NO RESTRICTIONS</h2>
+      <% else %>
+        <li>
+          <% @restrictions.each do |restriction| %>
+            <%= render 'shared/restriction', { restriction: restriction } %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+    <button class="issue-adder new_restriction">Add a restriction</button>
+    <%= render 'shared/new_restriction', { citizen: @citizen, restriction: @restriction } %>
+  </div>
+</div>
+
+<% if @add_fail %>
+  <% if @add_fail == 'convocation' %>
+    <script type="text/javascript">
+      $('#new_convocation').show();
+      window.location = window.location.href + '#new_convocation';
+    </script>
+  <% elsif @add_fail == 'conviction' %>
+    <script type="text/javascript">
+      $('#new_conviction').show();
+      window.location = window.location.href + '#new_conviction';
+    </script>
+  <% elsif @add_fail == 'flag' %>
+    <script type="text/javascript">
+      $('#new_flag').show();
+      window.location = window.location.href + '#new_flag';
+    </script>
+  <% elsif @add_fail == 'restriction' %>
+    <script type="text/javascript">
+      $('#new_restriction').show();
+      window.location = window.location.href + '#new_restriction';
+    </script>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $('.datepicker').pickadate();
+  });
+</script>

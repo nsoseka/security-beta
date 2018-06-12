@@ -1,0 +1,19 @@
+<%= my_form_for flag, url: citizen_flags_path(citizen, flag), method: 'post', html: {id: 'new_flag', autocomplete: 'off' }  do |f| %>
+  <h4>Flag Adder</h4>
+  <dl>
+    <dt>
+      <%= f.label :reason, 'Reason for Flagging' %>
+    </dt>
+    <dd>
+      <%= f.text_area :reason, rows: 6 %>
+    </dd>
+    <dt>
+      <%= f.label :severity, 'Level of Severity' %>
+    </dt>
+    <dd>
+      <%= f.select :severity, options_for_select([['Level 1', 1], ['Level 2', 2], ['Level 3', 3], ['Level 4', 4], ['Level 5', 5]], flag.severity) %>
+    </dd>
+  </dl>
+  <button type="submit" class="issue-adder">Add Flag</button>
+<% end %>
+

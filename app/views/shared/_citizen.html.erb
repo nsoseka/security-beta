@@ -1,0 +1,106 @@
+<li>
+  <!-- a href="#"> -->
+  <%= link_to citizen_path(citizen) do %>         
+    <figure>
+      <% if citizen.avatar.attached? %>
+        <%= image_tag citizen.avatar.variant(resize: '250x250').processed, class: 'passport' %>
+      <% else  %>
+      <img class="passport" src="<%= citizen.passport_url || url_for(citizen.avatar) %>">
+      <% end %>
+      <figcaption>
+        <h2><%= citizen.surname + ' ' + citizen.given_names %></h2>
+      </figcaption>
+    </figure>
+    <section class="citizen-info">
+      <dl>  
+        <div>           
+          <dt>
+            <label>Nom/Surname: </label>
+          </dt>
+          <dd>
+            <%= citizen.surname %>
+          </dd>
+        </div>       
+        <div>
+          <dt>
+            <label>Prenoms/Given Names: </label>
+          </dt>
+          <dd>
+            <%= citizen.given_names %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Ne le/Born On: </label>
+          </dt>
+          <dd>
+            <%= citizen.date_of_birth %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Pere/Father: </label>
+          </dt>
+          <dd>
+            <%= citizen.father %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Mere/Mother: </label>
+          </dt>
+          <dd>
+            <%= citizen.mother %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Profession/Occupation: </label>
+          </dt>
+          <dd>
+            <%= citizen.occupation %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Adresse/Address: </label>
+          </dt>
+          <dd>
+            <%= citizen.address %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Taille/Height: </label>
+          </dt>
+          <dd>
+            <%= citizen.height.to_s + 'M' %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>Sexe/Sex: </label>
+          </dt>
+          <dd>
+            <%= citizen.sex %>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            <label>S.P/S.M: </label>
+          </dt>
+          <dd>
+            <%= citizen.sp %>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    <div class='id-info'>
+      <h1>No: <span><%= citizen.id_card_number %></h1>
+      <p>Date de deliverance/Date of issue: <span class="date-of-issue"><%= citizen.date_issued %></span></p>
+      <p>Date d'expiration/Date of expiration: <span class="expiry-date"><%= citizen.expiry_date %></span></p>
+    </div>
+  <% end %>
+</li>
+
+<%= link_to 'Edit Citizen', edit_citizen_path(citizen) %>

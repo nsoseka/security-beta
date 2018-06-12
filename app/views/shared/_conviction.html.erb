@@ -1,0 +1,23 @@
+<li>
+  <div class="sentence">
+    <span>Sentence: </span>
+    <%= conviction.sentence %>
+  </div>
+  <div class='charge'>
+    <span>Charge: </span>
+    <%= conviction.charge %>
+  </div>
+  <div class="sentenced-by">
+    <span>Sentenced by Jugde: </span>
+    <span class="sentencer"><%= conviction.judge %></span>
+  </div>
+  <div class="date-of-sentencing">
+    <span>Sentenced on the: </span>
+    <span><%= conviction.sentenced_on %></span>
+  </div>
+  <div class="added-by">
+    <span>Added By:</span>
+    <span class="adder"><%= conviction.agent.username %></span>
+  </div>
+</li>
+

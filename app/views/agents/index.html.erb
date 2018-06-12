@@ -1,0 +1,14 @@
+<div class="main agent agents-profiles">
+  <h2 class="agents">Agents in Your Station</h2>
+  <% @agents.each do |agent| %>
+    <div class="personal-info">
+      <div class="detail">
+        <h3>Full Name: <span class="full-name"><%= agent.full_name %></span></h3>
+        <!-- <p><span class="factor">Full Name: </span> <span><%= agent.full_name %></span></p> -->
+        <p><span class="factor">Email:</span> <span><%= agent.email %></span></p>
+        <p><span class="factor">Phone Number: </span> <span><%= agent.phone_number %></span></p>
+        <p><span class="factor">Role: </span> <span><%= agent.role %></span></p>
+        <p><span class="factor">Station Name: </span> <span><%= agent.station.name %></span></p>
+    </div>
+  <% end %>
+</div>

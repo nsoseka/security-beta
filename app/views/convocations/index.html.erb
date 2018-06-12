@@ -1,0 +1,14 @@
+<div class="main agent">
+  <h2>Convocations Added by You</h2>
+  <div class="convocations">
+    <h3>Convocations</h3>
+    <ul>
+      <% @convocations.each do |convocation| %>
+        <%= render 'shared/convocation', { convocation: convocation } %>
+      <% end %>
+      <% if @convocations.empty? %>
+        <h2 class="no-items">NO CONVOCATIONS</h2>
+      <% end %>
+    </ul>
+  </div>
+</div>

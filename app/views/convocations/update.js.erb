@@ -1,0 +1,33 @@
+var item = $('[data-convocationid="<%= @convocation.id %>"]');
+var informant = $('#informant');
+
+if (<%= @column == 'status' %>) {
+  item.slideUp(400, function() {
+    if ($('.convocations li:visible').length === 0) {
+      $('.convocations ul').append('<h2 class="no-items">NO CONVOCATIONS</h2>');
+    }
+
+    informant.text('You have successfully closed the convocation');
+    informant.removeClass().addClass('green').show(400).delay(4000).hide(400);
+  });
+} else {
+  var honor = item.find('.honor-status .data');
+  var marker = item.find('.honor-status .change-status a');
+  if (honor.text() === 'YES') {
+    honor.text('NO');
+    marker.text('Mark YES');
+    
+  } else {
+    honor.text('YES');
+    marker.text('Mark NO');
+  }
+  
+  informant.text('You have successfully updated the honor status of the convocation');
+  informant.removeClass().addClass('green').show(400).delay(4000).hide(400);
+}
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<div class="main agent">
+  <h2>Restrictions Added by You</h2>
+  <div class="restrictions">
+    <h3>Restrictions</h3>
+    <ul>
+      <% if @restrictions.empty? %>
+        <h2 class="no-items">NO RESTRICTIONS</h2>
+      <% else %>
+        <li>
+          <% @restrictions.each do |restriction| %>
+            <%= render 'shared/restriction', { restriction: restriction } %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

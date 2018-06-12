@@ -1,0 +1,80 @@
+<%
+  convocations = @agent.convocations
+  open_c = convocations.reject{ |c| c.status }.length
+  num_of_convocations = convocations.length
+  restrictions = @agent.restrictions 
+  open_r = restrictions.reject{ |r| r.remove }.length
+  num_of_restrictions = restrictions.length
+  flags = @agent.flags
+  open_f = flags.reject{ |f| f.remove }.length
+  num_of_flags = flags.length
+  num_of_archives = Archive.where(agent_id: current_agent.id).length
+%>
+
+<div class="main agent agent-profile">
+  <div class="personal-info">
+    <h2>Personal Settings <span class="logout"><%= link_to 'Log Out', sign_out_path %></h2>
+    <div class="detail">
+      <h3>Username: <span><%= @agent.username %></span></h3>
+      <p><span class="factor">Full Name: </span> <span><%= @agent.full_name %></span></p>
+      <p><span class="factor">Email:</span> <span><%= @agent.email %></span></p>
+      <p><span class="factor">Phone Number: </span> <span><%= @agent.phone_number %></span></p>
+      <p><span class="factor">Station: </span> <span><%= @agent.station.name %></span></p>
+      <p><span class="factor">Role: </span> <span><%= @agent.role %></span></p>
+      <p><span class="factor">Service Id: </span> <span><%= @agent.service_id %></span></p>
+      <div class="btn">
+        <button><%= link_to 'Edit Profile Settings', edit_agent_path(@agent) %></button>
+      </div>
+      <p class="warning">
+      !!! Please note that if you edit your profile, it will have to be verified by the authorities again before you can have access to the system !!!
+      </p>
+  </div>
+
+  <div class="your-convocation-details">
+    <h2>Convocation Details</h2>
+    <div class="detail">
+      <% if num_of_convocations != 0 %>
+        <p><span class="factor">Total Convocations: </span> <span><%= num_of_convocations %></span></p>
+        <p><span class="factor">Still Open: </span> <span><%= open_c %></span></p>
+        <p><span class="factor">Closed: </span> <span><%= num_of_convocations - open_c %></span></p>
+      <% else %>
+        <h4>NO CONVOCATIONS</h4>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="your-restriction-details">
+    <h2>Restriction Details</h2>
+    <div class="detail">
+      <% if num_of_restrictions != 0 %>
+        <p><span class="factor">Total Restrictions: </span> <span><%= num_of_restrictions %></span></p>
+        <p><span class="factor">Still in Effect: </span> <span><%= open_r %></span></p>
+        <p><span class="factor">Removed: </span> <span><%= num_of_restrictions - open_r %></span></p>
+      <% else %>
+        <h4>NO RESTRICTIONS</h4>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="your-flag-details">
+    <h2>Flag Details</h2>
+    <div class="detail">
+      <% if num_of_flags != 0 %>
+        <p><span class="factor">Total Flags:</span> <span><%= num_of_flags %></span></p>
+        <p><span class="factor">Still in Effect:</span> <span><%= open_f %></span></p>
+        <p><span class="factor">Removed:</span> <span><%= num_of_flags - open_f %></span></p>
+      <% else %>
+        <h4>NO FLAGS</h4>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="your-archive-details">
+    <h2>Archive History</h2>
+    <div class="detail">
+      <h3><span><%= num_of_archives %></span> archive(s) available about You</h3>
+    </div>
+  </div>
+  </div>
+
+

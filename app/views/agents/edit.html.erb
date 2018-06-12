@@ -1,0 +1,41 @@
+<div class="home edit-agent">
+  <div class="aside">
+    <%= my_form_for @agent, url: agent_path(@agent), html: { autocomplete: 'off' } do |f| %>
+      <h2>Edit Form</h2>
+      <div>
+        <%= f.label :full_name, 'Full Names' %>
+        <%= f.text_field :full_name %>
+        <%= f.label :email, 'Email' %>
+        <%= f.email_field :email %>
+      </div>
+      <div>
+        <%= f.label :username, 'Username' %>
+        <%= f.text_field :username %>
+        <%= f.label :phone_number, 'Phone Number' %>
+        <%= f.text_field :phone_number %>
+      </div>
+      <div>
+        <%= f.label :password, 'Password' %>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirmation, 'Confirmation Password' %>
+        <%= f.password_field :password_confirmation %> 
+      </div>
+      <div>
+        <%= f.label :service_id, 'Service Id' %>
+        <%= f.text_field :service_id %>
+        <%= f.label :id_card_number, 'ID Card Number' %>
+        <%= f.number_field :id_card_number %>
+      </div>
+      <div>
+        <%= f.label :role, 'Role' %>
+        <%= f.select :role, options_for_select([['Choose Role', 'choose'], ['Police', 'police'], ['Judge', 'judge'], ['Commissioner', 'commissioner'], ['State Council', 'state_councile'], ['Gendarme', 'gendarme'], ['Arbitre', 'arbitre']], @agent.role) %>
+        <%= f.label :station_id, 'Station' %>
+        <%= f.select :station_id, options_for_select([['Choose Station', 'choose'], ['Kumbo Police', 1], ['Nkambe Police', 2], ['Jakiri Gendarmerie', 3], ['Francina', 4], ['Ndu Police', 5], ['Ndop Police', 6]], @agent.station_id) %>
+      </div>
+      <div>
+        <button type="submit">Edit Account</button>
+      </div>    
+    <% end %>
+  </div>
+  
+</div>

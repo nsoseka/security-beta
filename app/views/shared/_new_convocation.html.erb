@@ -1,0 +1,25 @@
+<%= my_form_for convocation, url: citizen_convocations_path(citizen, convocation), method: 'post', html: {id: 'new_convocation', autocomplete: 'off'}  do |f| %>
+  <h4>Issue a Convocation</h4>
+  <dl>
+    <dt>
+      <%= f.label :reason, 'Reason for Convocation' %>
+    </dt>
+    <dd>
+      <%= f.text_area :reason, rows: 6 %>
+    </dd>
+    <dt>
+      <%= f.label :date_expected, 'Date expected' %>
+    </dt>
+    <dd>
+      <%= f.text_field :date_expected, class: 'datepicker' %>
+    </dd>
+    <dt>
+      <%= f.label :convoker_id, 'Convoked by(convokers ID card Number)' %>
+    </dt>
+    <dd>
+      <%= f.text_field :convoker_id %>
+    </dd>
+  </dl>
+  <button type="submit" class="issue-adder">Add Convocation</button>
+<% end %>
+

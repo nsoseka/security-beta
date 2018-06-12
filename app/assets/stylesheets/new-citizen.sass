@@ -1,0 +1,74 @@
+@import 'colors'
+
+.register-citizen
+  text-align: center
+  h2 
+    color: $blue 
+    text-align: center
+    font-size: 1.5em
+    .warning
+      color: $red
+      display: block
+      width: 100%
+      font-weight: bold
+      padding: 30px
+      font-size: 0.6em
+
+  #new-citizen
+    text-align: left
+    width: 60%
+    margin: 0 auto
+    padding: 20px
+    border: 1px solid #ddd
+    border-radius: 4px
+    .image-container, .submit
+      text-align: center
+    > input, > select
+      display: block
+      border: 1px solid #ddd
+      font-size: 1.3em
+      font-weight: normal
+      padding: 5px
+      margin: 5px auto 8px auto
+      width: 80%
+    label 
+      display: block
+      width: 80%
+      margin: 0 auto
+    select
+      width: 25%
+      text-align: center
+      border: 1px solid #ddd
+      font-size: 1.3em
+      font-weight: normal
+      padding: 5px
+      margin: 5px auto 8px auto
+    .sex 
+      width: 80%
+    button 
+      background: $blue 
+      padding: 15px 30px
+      border: 1px solid $pure-white
+      color: $pure-white
+      border-radius: 5px
+      cursor: pointer
+    p 
+      font-size: 0.8em
+      padding: 40px
+      font-weight: 500
+      color: $faint-black
+    .field_with_errors
+      display: block
+      width: 100%
+      input, select 
+        border: 1px solid $red
+        display: block
+        width: 80%
+        margin: 5px auto 8px auto
+        font-size: 1.3em
+        font-weight: normal
+        padding: 5px
+    img 
+      width: 200px
+      height: auto
+      border-radius: 4px

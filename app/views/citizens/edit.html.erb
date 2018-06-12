@@ -1,0 +1,73 @@
+<div class="main register-citizen">
+  <h2>Register ID Card</h2>
+  <%= my_form_for @citizen, url: citizen_path(@citizen), method: 'put', html: { id: 'new-citizen', autocomplete: 'off' } do |f| %>
+    <%= f.label :avatar, 'Choose your Passport Size Photo' %>
+    <%= f.file_field :avatar %>
+    <div class="image-container">
+      <% if @citizen.avatar.attached? %>
+        <%= image_tag @citizen.avatar.variant(resize: '250x250').processed, class: 'passport', id: 'passport-img' %>
+      <% else  %>
+        <img id="passport-img" src="#"/>
+      <% end %>
+    </div>
+    <%= f.label :surname, 'Surname/Nom' %>
+    <%= f.text_field :surname %>
+    <%= f.label :given_names, 'Given names/Prenoms' %>
+    <%= f.text_field :given_names %>
+    <%= f.label :date_of_birth, 'Born on/Ne le' %>
+    <%= f.text_field :date_of_birth, class: 'datepicker' %>
+    <%= f.label :born_at, 'Born at/Ne a' %>
+    <%= f.text_field :born_at %>
+    <%= f.label :father, 'Father/Pere' %>
+    <%= f.text_field :father %>
+    <%= f.label :mother, 'Mother/Mere' %>
+    <%= f.text_field :mother %>
+    <%= f.label :occupation, 'Occupation' %>
+    <%= f.text_field :occupation %>
+    <%= f.label :address, 'Address' %>
+    <%= f.text_field :address %>
+    <%= f.label :height, 'Height/Taille' %>
+    <%= f.text_field :height %>
+    <%= f.label :sex, 'Sex/Sexe' %>
+    <%= f.select :sex, options_for_select([['Male/Homme', 'M'], ['Female/Femme', 'F']], @citizen.sex), {}, { class: 'sex' } %>
+    <%= f.label :sp, 'S.P/S.M' %>
+    <%= f.number_field :sp %>
+    <%= f.label :date_issued, 'Date of issue/Date de deliverance' %>
+    <%= f.text_field :date_issued, class: 'datepicker' %>
+    <%= f.label :expiry_date, "Date of Expiration/Date d'expiration" %>
+    <%= f.text_field :expiry_date, class: 'datepicker' %>
+    <%= f.label :id_card_number, 'ID Card Number' %>
+    <%= f.number_field :id_card_number %>
+    <div class="submit">
+      <button type="submit">Edit Card</button>
+    </div>
+  <% end %>
+  <script>
+    function readURL(input) {
+
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#passport-img').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#citizen_avatar").change(function() {
+      readURL(this);
+    });
+
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+</div>
+
+

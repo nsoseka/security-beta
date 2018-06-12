@@ -1,0 +1,18 @@
+var item = $('[data-flagid="<%= @flag.id %>"]');
+var informant = $('#informant');
+
+item.slideUp(400, function() {
+  if ($('.flags li:visible').length === 0) {
+    $('.flags ul').append('<h2 class="no-items">NO FLAGS</h2>');
+  }
+
+  informant.text('You have successfully removed the Flag');
+  informant.removeClass().addClass('green').show(400).delay(4000).hide(400);
+});
+  
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<li data-convocationid="<%= convocation.id %>">
+  <div class="reason">
+    <span>Reason: </span>
+    <%= convocation.reason %>
+  </div>
+  <div class="status">
+    <span>Status: </span>
+    <span class="data"><%= convocation.status ? 'Closed' : 'Open' %></span>
+    <span class="change-status">
+      <%= link_to 'Close Convocation', citizen_convocation_path(convocation.citizen, convocation), remote: true, class: 'status-updater convocation-updater' %>
+    </a></span>
+  </div>
+  <div class="date">
+    <span>Date expected to show up: </span>
+    <span class="data"><%= convocation.date_expected %></span>
+  </div>
+  <div class="honor-status">
+    <span>Honored invitation yet? </span>
+    <span class="data"><%= convocation.honor_status ? 'YES' : 'NO' %></span>
+    <span class="change-status">
+      <% if convocation.honor_status %>
+      <%= link_to 'Mark NO', citizen_convocation_path(convocation.citizen, convocation), remote: true, class: 'honor convocation-updater' %>
+      
+      <% else %>
+      <%= link_to 'Mark YES', citizen_convocation_path(convocation.citizen, convocation), remote: true, class: 'honor convocation-updater' %>
+      <% end %>
+    </span>
+  </div>
+  <div class="convokee">
+    <span>Convoked by: </span>
+    <span class="data">
+      <% convoker = Citizen.find_by(id_card_number: convocation.convoker_id) %>
+      <%= link_to citizen_path(convoker) do %>
+        <%= convoker.surname + ' ' + convoker.given_names %>
+      <% end %>
+    </span>
+  </div>
+  <div class="added-by">
+    Added by:
+    <span class="adder"><%= convocation.agent.username %></span>
+  </div>
+</li>
