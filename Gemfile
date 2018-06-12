@@ -44,6 +44,7 @@ gem 'unobtrusive_flash', '>=3'
 gem 'aws-sdk-s3', require: false
 gem 'mini_magick'
 gem 'figaro'
+gem 'webpacker'
 #gem 'peek'
 
 
