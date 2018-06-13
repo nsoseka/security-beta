@@ -40,6 +40,9 @@
         </tr>
       <% end %>
     </table>
+    <% if @requests.empty? %>
+      <div class="no-items-container"><h2 class="no-items">NO REQUESTS</h2></div>
+    <% end %>
   </div>
 </div>
 

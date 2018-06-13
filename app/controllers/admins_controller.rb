@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :require_admin
+  before_action :require_agent, :require_admin
 
   def index
     @active_tab = 'dashboard'

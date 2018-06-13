@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_agent
-    Agent.find(session[:agent_id]) if session[:agent_id]
+    Agent.find(session[:agent_id]) if session[:agent_id] 
   end
 
   def require_admin
