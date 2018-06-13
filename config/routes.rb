@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'sign_in', to: "sessions#new"
   get 'sign_out', to: "sessions#destroy"
   get 'search', to: "citizens#search", as: 'citizens_search'
+  get 'requests_dashboard', to: 'admins#index'
   patch 'verify_agent', to: "admins#verify_agent"
 
   resources :citizens, except: [:delete] do
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :stations, only: [:new]
 
-  resources :admins, only: [:index] do 
-    resources :agents, only: [:update]
-  end
+  # resources :admins, path_names: { index: 'requests_dashboard' }, only: [:index] do 
+  #   resources :agents, only: [:update]
+  # end
 end

@@ -33,6 +33,8 @@ class AgentsController < ApplicationController
   end
 
   def update
+    # allow agent to change their profile settings
+
     @agent = Agent.find(params[:id])
     @agent.verification_status = true
 
@@ -47,7 +49,9 @@ class AgentsController < ApplicationController
         end
       end
     elsif current_agent.id == params[:id]
-
+      current_agent.destroy
+      flash[:error] = "This agent request is now deleted"
+      redirect_to root_path
     else
       session[:id] = nil
       redirect_to sign_in_path
@@ -71,8 +75,8 @@ class AgentsController < ApplicationController
       flash[:notice] = "Only the administrator is allowed to delete an account: Further attempts to delete your account can be prosecuted"
       redirect_to current_agent
     else
-      flash[:error] = "This account has been placed under investigation for forgery and is now deactivated"
       current_agent.update_attribute('verification_status', false)
+      flash[:error] = "This account has been placed under investigation for forgery and is now deactivated"
       session[:id] = nil
       redirect_to sign_in_path
     end

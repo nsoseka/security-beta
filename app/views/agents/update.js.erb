@@ -2,8 +2,8 @@ var row = $('[data-agentid="<%= @agent.id %>"]');
 var informant = $('#informant');
 
 row.slideUp(400, function() {
-  if ($('.new-agent-request tr:visible').length === 0) {
-    $('.new-agent-request table').append('<h2 class="no-items">NO REQUESTS</h2>');
+  if ($('.new-agent-request tr:visible').length === 1) {
+    $('.new-agent-request').append('<div class="no-items-container"><h2 class="no-items">NO REQUESTS</h2></div>');
   }
 
   informant.text('You have successfully verified that agent');

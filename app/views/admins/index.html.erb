@@ -36,7 +36,7 @@
             <%= link_to 'DELETE', agent_path(request), method: 'delete', remote: true %>
           </td>
           <td class="verification-status">
-            <%= link_to 'Verify Agent', admin_agent_path(current_agent, request), remote: true, method: 'patch', param: { action: 'verify' } %>
+            <%= link_to 'Verify Agent', agent_path(request), remote: true, method: 'patch', param: { action: 'verify' } %>
         </tr>
       <% end %>
     </table>

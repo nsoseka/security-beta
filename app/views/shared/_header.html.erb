@@ -4,7 +4,7 @@
     <nav>
       <% if current_agent.role == 'admin' %>
         <li class="<%= active_tab == 'dashboard' ? 'active-tab' : 'nil' %>">
-          <%= link_to 'Dashboard', admins_path %>
+          <%= link_to 'Dashboard', requests_dashboard_path %>
         </li>
       <% end %>
       <li class="<%= active_tab == 'convocations' ? 'active-tab' : 'nil' %>">
