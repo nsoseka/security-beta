@@ -3,6 +3,7 @@ class ConvictionsController < ApplicationController
   
   def index
     @convictions = Conviction.where(agent: current_agent)
+    @active_tab = 'convictions'
   end
 
   def create
