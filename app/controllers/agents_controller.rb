@@ -22,10 +22,6 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
 
-    if Agent.all.length == 1
-      @agent.role = 'admin'
-    end
-
     if @agent.save
       flash[:notice] = "Account was succesfully created," +
                         "once verified you will be able to access the platform"
