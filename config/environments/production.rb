@@ -7,7 +7,13 @@ Rails.application.configure do
   config.cache_classes = true
 
   # Store files on Amazon S3.
-  config.active_storage.service = :amazon
+  config.active_storage.service = {
+    service: S3
+    access_key_id: ENV["s3_access_key_id"]
+    secret_access_key: ENV["s3_secret_access_key"]
+    bucket: ENV["s3_bucket"]
+    region: ENV["s3_region"]
+  }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
