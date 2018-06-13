@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :agents, only: [:index, :show, :create, :edit, :update, :create, :new]
+  resources :agents#, only: [:index, :show, :create, :edit, :update, :create, :new]
   resources :sessions, only: [:create]
 
   [:convocations, :restrictions, :convictions, :flags].each do |route_resource|

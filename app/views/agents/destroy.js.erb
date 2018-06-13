@@ -1,0 +1,12 @@
+var row = $('[data-agentid="<%= @agent.id %>"]');
+var informant = $('#informant');
+
+row.slideUp(400, function() {
+  if ($('.new-agent-request tr:visible').length === 0) {
+    $('.new-agent-request table').append('<h2 class="no-items">NO REQUESTS</h2>');
+  }
+
+  informant.text('That request was succesfully DELETE');
+  informant.removeClass().addClass('red').show(400).delay(4000).hide(400);
+});
+

@@ -1,5 +1,5 @@
 class AgentsController < ApplicationController
-  before_action :require_agent, except: [:new, :create, :update]
+  before_action :require_agent, except: [:new, :create]
 
   def index
     @agents = Agent.where(station_id: current_agent.station_id)
@@ -52,6 +52,32 @@ class AgentsController < ApplicationController
       session[:id] = nil
       redirect_to sign_in_path
     end
+  end
+
+  def destroy
+    @agent = Agent.find(params[:id])
+
+    if current_agent.role == 'admin'
+      if @agent.destroy
+
+        archive_change(@agent)
+
+        respond_to do |format|
+          # format.html { render 'citizens/show' } ### todo
+          format.js
+        end
+      end
+    elsif current_agent.id == params[:id]
+      flash[:notice] = "Only the administrator is allowed to delete an account: Further attempts to delete your account can be prosecuted"
+      redirect_to current_agent
+    else
+      flash[:error] = "This account has been placed under investigation for forgery and is now deactivated"
+      current_agent.update_attribute('verification_status', false)
+      session[:id] = nil
+      redirect_to sign_in_path
+    end
+
+    binding.pry
   end
 
   private

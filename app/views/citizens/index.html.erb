@@ -28,11 +28,13 @@
       </button>
     </div>
     
-    <div>
-      <button class="new-factor">
-        <%= link_to "Register a Station", new_station_path %>
-      </button>
-    </div>
+    <% if current_agent.role == 'admin' %>
+      <div>
+        <button class="new-factor">
+          <%= link_to "Register a Station", new_station_path %>
+        </button>
+      </div>
+    <% end %>
     
   </div>
 

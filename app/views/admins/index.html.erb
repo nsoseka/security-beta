@@ -13,6 +13,7 @@
         <th>ID Card Number</th>
         <th>Service Id</th>
         <th>Verified Email?</th>
+        <th class="delete-request">DELETE REQUEST</th>
         <th>Verify Agent's Account</th>
       </thead>
       <% @requests.each_with_index do |request, n| %>
@@ -31,7 +32,9 @@
           <% else %>
             <td>NO</td>
           <% end %>
-
+          <td class="delete-request">
+            <%= link_to 'DELETE', agent_path(request), method: 'delete', remote: true %>
+          </td>
           <td class="verification-status">
             <%= link_to 'Verify Agent', admin_agent_path(current_agent, request), remote: true, method: 'patch', param: { action: 'verify' } %>
         </tr>

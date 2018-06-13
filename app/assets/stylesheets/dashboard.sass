@@ -22,11 +22,18 @@
           font-size: 0.9em
         th:nth-child(2n+1)
           background-color: rgba(51, 136, 85, 0.5)
+        .delete-request 
+          color: $purple
       tbody
         td
           border: 2px solid $faint-blue
           text-align: center
-          padding: 15px 3px
+          padding: 15px 2px
+        td.delete-request
+          color: $purple
+          font-weight: bold
+        td.delete-request:hover
+          color: $red
         tr:nth-child(2n+1)
           td
             background-color: rgba(181, 45, 3, 0.2)

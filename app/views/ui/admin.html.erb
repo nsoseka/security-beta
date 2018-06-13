@@ -13,6 +13,7 @@
         <th>ID Card Number</th>
         <th>Service Id</th>
         <th>Verified Email?</th>
+        <th class="delete-request">Delete Request</th>
         <th>Verify Agent's Account</th>
       </thead>
       <%= 30.times do |n| %>
@@ -27,6 +28,7 @@
           <td>117708898</td>
           <td>12CFRGTY</td>
           <td>No</td>
+          <td class="delete-request"><a href="#">DELETE</a></td>
           <td class="verification-status"><a href="#">Verify agent</a></td>
         </tr>
       <% end %>
