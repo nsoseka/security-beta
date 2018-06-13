@@ -18,8 +18,8 @@ class Citizen < ApplicationRecord
 
   scope :with_eager_loaded_avatar, -> { eager_load(avatar_attachment: :blob) }
   scope :with_preloaded_avatar, -> { preload(avatar_attachment: :blob) }
-  scope :search_by_surname, -> (query) { where("surname LIKE '%#{sanitize_sql_like(query)}%'") }
-  scope :search_by_given_names, -> (query) { where("given_names LIKE '%#{sanitize_sql_like(query)}%'") }
+  scope :search_by_surname, -> (query) { where("lower(surname) LIKE '%#{sanitize_sql_like(query)}%'") }
+  scope :search_by_given_names, -> (query) { where("lower(given_names) LIKE '%#{sanitize_sql_like(query)}%'") }
   scope :search_citizen, -> (query) { search_by_surname(query).or(search_by_given_names(query)) }
 
 

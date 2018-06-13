@@ -84,3 +84,6 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
+#figaro heroku:set -e production
+

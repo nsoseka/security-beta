@@ -47,8 +47,8 @@ class CitizensController < ApplicationController
   end
 
   def search
-    @query = params[:search_query].strip
-    criteria = params[:search_criteria].strip
+    @query = params[:search_query].strip.downcase
+    criteria = params[:search_criteria].strip.downcase
 
     if @query.scan(/\D/).empty?
       @citizens = Citizen.where(id_card_number: @query).or(Citizen.where(telephone: @query)).with_attached_avatar

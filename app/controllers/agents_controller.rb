@@ -22,7 +22,7 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
 
-    if Agent.all == 0
+    if Agent.all.length == 1
       @agent.role = 'admin'
     end
 
