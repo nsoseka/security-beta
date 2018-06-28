@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'search', to: "citizens#search", as: 'citizens_search'
   get 'requests_dashboard', to: 'admins#index'
   patch 'verify_agent', to: "admins#verify_agent"
+  post 'background_history', to: "citizens#background_history"
 
   resources :citizens, except: [:delete] do
     [:convocations, :flags, :restrictions, :convictions].each do |asset|

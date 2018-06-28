@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     agent = Agent.find_by(username: params[:username])
 
-    if agent.verification_status == false
+    if agent && agent.verification_status == false
       flash[:notice] = "Please you will have to be verified before you can access the platform. Thanks!"
       redirect_to root_path
     elsif agent && agent.authenticate(params[:password])

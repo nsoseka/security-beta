@@ -45,6 +45,8 @@ gem 'aws-sdk-s3', require: false
 gem 'mini_magick'
 gem 'figaro'
 gem 'webpacker'
+gem 'fast_jsonapi'
+gem 'ransack'
 #gem 'peek'
 
 
