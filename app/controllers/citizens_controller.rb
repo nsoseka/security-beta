@@ -69,8 +69,7 @@ class CitizensController < ApplicationController
   def citizen_finder(query)
     citizens = query.scan(/\D/).empty? ?
     Citizen.where(id_card_number: query).or(Citizen.where(telephone: query)).with_attached_avatar :
-    Citizen.ransack(full_name_cont_all: query.split(' '))
-    citizens.result
+    Citizen.ransack(full_name_cont_all: query.split(' ')).result
   end
 
   def citizen_params
